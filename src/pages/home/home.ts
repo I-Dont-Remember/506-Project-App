@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,Platform } from 'ionic-angular';
+import { LibSMS } from '../../providers/providers';
 declare var SMS:any;
 @Component({
   selector: 'page-home',
@@ -7,10 +8,14 @@ declare var SMS:any;
 })
 export class HomePage {
 mySMS:any[]=[];
-    constructor(public navCtrl: NavController, public platform:Platform) {
+    constructor(public navCtrl: NavController, public platform:Platform, private libSMS: LibSMS) {
 
     }
 
+    changeMessage() {
+        this.libSMS.setMessage("Home page yeah");
+    }
+    
     ionViewDidEnter() {
         this.platform.ready()
         .then((readySource) => {

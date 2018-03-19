@@ -7,10 +7,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AndroidPermissions} from '@ionic-native/android-permissions';
+import { PagePage } from '../pages/page/page';
+import { LibSMS } from '../providers/providers';
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PagePage
   ],
   imports: [
     BrowserModule,
@@ -19,11 +23,12 @@ import { AndroidPermissions} from '@ionic-native/android-permissions';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PagePage
   ],
   providers: [
     StatusBar,AndroidPermissions,
-    SplashScreen,
+    SplashScreen, LibSMS,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

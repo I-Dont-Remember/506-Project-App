@@ -3,7 +3,11 @@
     <ion-title>
       Ionic Blank
     </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
+  <button (click)="changeMessage()">button</button>
 </ion-header>
 
 <ion-content padding>
@@ -12,4 +16,9 @@
  		{{sms.body}}
  	</ion-card-content>
  </ion-card>
+  The world is your oyster. Bla BLa Bla
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">doxs</a> will be your guide.
+  </p>
+  <h2>{{libSMS.message}}</h2>
 </ion-content>
