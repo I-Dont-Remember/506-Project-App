@@ -41,12 +41,23 @@ export class MyApp {
     }
 
    enablePermission() {
+       //permissions for sending text
     this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.READ_SMS).then(
       success => console.log('Permission granted'),
     err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.READ_SMS)
     );
 
     this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.READ_SMS]);
+
+
+
+
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.SEND_SMS).then(
+      success => console.log('Permission granted'),
+    err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.SEND_SMS)
+    );
+
+    this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.SEND_SMS]);
    }
 
 }
